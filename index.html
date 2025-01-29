@@ -1,11 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3x3 Block Grid with Questions</title>
     <style>
-        h1 { color: white; align-items: center; }
+		h1{color:white; align-items:center;}
         body {
             margin: 0;
             height: 100vh;
@@ -89,8 +89,8 @@
             transform: translate(-50%, -50%);
             color: white;
         }
-
-        .image-replacement {
+		
+		.image-replacement {
             width: 100%;
             height: 100%;
             background-size: no-repeat center center / cover;
@@ -103,21 +103,10 @@
             display: none;
         }
 
-        #next-level {
-            display: none;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #0ac4bb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const answers = ["Salman khan", "Kuch kuch hota hai", "PK", "Wanted", "Gully boy", "Om Shanti Om", "Bhaag milkha bhaag", "Ae Dil hai mushkil", "Mission kashmir"];
+            const answers = ["carrot", "egg", "comb", "Seven", "mushroom", "Three", "g", "shadow", "r"];
             const blocks = document.querySelectorAll(".block");
             const nextLevelButton = document.getElementById("next-level");
 
@@ -125,7 +114,7 @@
                 const question = block.querySelector("div");
                 const input = block.querySelector("input");
                 const button = block.querySelector("button");
-
+                
                 if (index > 0) {
                     block.classList.add("locked");
                     question.classList.add("hidden");
@@ -134,7 +123,7 @@
                 button.addEventListener("click", () => {
                     if (input.value.trim().toLowerCase() === answers[index].toLowerCase()) {
                         block.innerHTML = `<div class="image-replacement" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA09xPglouIIYrs5TFGfMDKaikdi_FgZFreA&s') no-repeat center center / cover;"></div>`;
-
+                        
                         if (index + 1 < blocks.length) {
                             const nextBlock = blocks[index + 1];
                             nextBlock.classList.remove("locked");
@@ -151,20 +140,22 @@
     </script>
 </head>
 <body>
-    <h1>Treasure <br> Thunder</h1>
-
-    <!-- Update video source to your repository or use an external video URL -->
+	<h1>   Treasure <br>    Thunder</h1>
     <video autoplay muted loop class="video-background">
-        <source src="assets/BG.mp4" type="video/mp4">
+        <source src="https://www.dropbox.com/scl/fi/5glr9aq4d3yu4hk84xjgp/BG.mp4?rlkey=rwxrcgkerq7wlhch1tvnr9zsh&st=b5hzqlcg&dl=1" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <div class="grid">
-        <!-- Block items here -->
-        <div class="block"><div>Question 1: Which actor played the role of “Chulbul Pandey” in the film “Dabangg”?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
-        <!-- Other blocks follow... -->
+        <div class="block"><div>Question 1: What is orange, wears a green hat, and sounds like a parrot?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 2: What is more useful when it is broken?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 3: What has many teeth, but can’t bite?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 4: I am an odd number. Take away a letter and I become even. What number am I?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 5: What kind of room has no doors, walls, or windows?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 6: A little girl goes to the store and buys one dozen eggs. As she is going home, all but three break. How many eggs are left unbroken</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 7: What is the end of everything?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 8: I follow you all the time and copy your every move, but you can’t touch me or catch me. What am I?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
+        <div class="block"><div>Question 9: What is seen in the middle of March and April that can't be seen at the beginning or end of either month?</div><input type="text" placeholder="Your answer here"><button>Submit</button></div>
     </div>
-
-    <button id="next-level" onclick="window.location.href='round 2.html'">Next Level</button>
 </body>
 </html>
